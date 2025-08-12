@@ -2,9 +2,14 @@ body {
   margin: 0;
   background: black;
   color: white;
-  font-family: sans-serif;
+  font-family: Arial, sans-serif;
 }
 
+.hidden {
+  display: none;
+}
+
+/* Intro Scene */
 #intro {
   height: 100vh;
   display: flex;
@@ -12,22 +17,50 @@ body {
   justify-content: center;
   align-items: center;
   font-size: 3rem;
+  opacity: 1;
+  transition: opacity 1s ease;
 }
 
+/* Portfolio Layout */
 #portfolio {
   display: flex;
   height: 100vh;
 }
 
-.left, .middle, .right { padding: 2rem; }
+.left, .middle, .right {
+  padding: 2rem;
+}
 
-.left { flex: 1; }
-.middle { flex: 1; }
-.right { flex: 2; display: flex; flex-direction: column; gap: 1rem; }
+.left {
+  flex: 1;
+}
+
+.middle {
+  flex: 1;
+}
+
+.middle ul {
+  list-style: none;
+  padding: 0;
+}
+
+.middle li {
+  margin: 1rem 0;
+  cursor: pointer;
+}
+
+.middle li.active {
+  text-decoration: underline;
+}
+
+.right {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
 
 .box {
   flex: 1;
   border: 1px solid white;
 }
-
-.hidden { display: none; }
