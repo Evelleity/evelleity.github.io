@@ -9,44 +9,20 @@ body {
   display: none;
 }
 
-/* Intro Scene */
-#intro {
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  font-size: 3rem;
-  opacity: 1;
-  transition: opacity 1s ease;
+.big-name {
+  font-size: 2.5rem;
+  font-weight: bold;
 }
 
-/* Portfolio Layout */
-#portfolio {
-  display: flex;
-  height: 100vh;
-}
-
-.left, .middle, .right {
-  padding: 2rem;
-}
-
-.left {
-  flex: 1;
-}
-
-.middle {
-  flex: 1;
-}
-
-.middle ul {
-  list-style: none;
-  padding: 0;
+.big-menu {
+  font-size: 1.5rem;
+  font-weight: bold;
 }
 
 .middle li {
   margin: 1rem 0;
   cursor: pointer;
+  transition: all 0.3s ease;
 }
 
 .middle li.active {
@@ -63,4 +39,25 @@ body {
 .box {
   flex: 1;
   border: 1px solid white;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.box:hover {
+  background: rgba(255, 255, 255, 0.1);
+  transform: scale(1.02);
+}
+
+/* Fade animation classes */
+.fade-out {
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.fade-in {
+  opacity: 1;
+  transition: opacity 0.5s ease;
 }

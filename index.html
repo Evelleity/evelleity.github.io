@@ -15,19 +15,38 @@
 
   <!-- Main Portfolio -->
   <section id="portfolio" class="hidden">
-    <div class="left">Your Name</div>
+    <div class="left big-name">Your Name</div>
+
     <div class="middle">
       <ul>
-        <li class="active">Works</li>
-        <li>Media</li>
-        <li>Code</li>
-        <li>Contact</li>
+        <li data-section="works" class="active big-menu">Works</li>
+        <li data-section="media">Media</li>
+        <li data-section="code">Code</li>
+        <li data-section="contact">Contact</li>
       </ul>
     </div>
-    <div class="right">
-      <div class="box"></div>
-      <div class="box"></div>
-      <div class="box"></div>
+
+    <!-- Works -->
+    <div class="right content-panel" data-content="works">
+      <div class="box">Project 1</div>
+      <div class="box">Project 2</div>
+      <div class="box">Project 3</div>
+    </div>
+
+    <!-- Media -->
+    <div class="right content-panel hidden" data-content="media">
+      <div class="box">Video 1</div>
+      <div class="box">Image 1</div>
+    </div>
+
+    <!-- Code -->
+    <div class="right content-panel hidden" data-content="code">
+      <div class="box">GitHub Repo 1</div>
+    </div>
+
+    <!-- Contact -->
+    <div class="right content-panel hidden" data-content="contact">
+      <div class="box">Email: me@example.com</div>
     </div>
   </section>
 
