@@ -150,9 +150,22 @@ body{
   background: linear-gradient(180deg, rgba(11,102,35,0.06), rgba(0,0,0,0.14));
 }
 
-/* Contact & small variants */
-.panel-stack{ display:flex; gap:1rem; flex-direction:column; max-width:520px; }
-.lead{ color:var(--text); font-weight:600; font-size:1.05rem; margin-bottom:.4rem; }
+/* Works section title */
+.section-title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: var(--text);
+}
+
+/* Contact plain text */
+.content-panel[data-content="contact"] p {
+  background: none;
+  padding: 0;
+  border-radius: 0;
+  box-shadow: none;
+  font-weight: 400;
+}
 
 /* Hidden & fade classes */
 .hidden{ display:none !important; }
