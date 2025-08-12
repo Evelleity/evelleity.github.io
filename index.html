@@ -1,59 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>My Portfolio</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Evelleity — Portfolio</title>
+
+  <!-- Google font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
   <!-- Intro Scene -->
-  <section id="intro">
-    <canvas id="intro-bg"></canvas>
-    <div class="intro-content">
+  <section id="intro" aria-hidden="false">
+    <canvas id="intro-bg" aria-hidden="true"></canvas>
+    <div class="intro-content" role="banner">
       <h1 class="intro-name">Your Name</h1>
-      <p class="intro-sub">Creative Portfolio</p>
+      <p class="intro-sub">Creative Portfolio — Design & Code</p>
     </div>
   </section>
 
   <!-- Main Portfolio -->
-  <section id="portfolio" class="hidden">
-    <div class="left">
-      <h2 class="big-name">Your Name</h2>
-    </div>
+  <main id="portfolio" class="hidden" role="main" aria-hidden="true">
+    <aside class="sidebar" aria-label="Primary">
+      <div class="brand">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <div>
+          <h2 class="big-name">Your Name</h2>
+          <p class="role">Designer · Developer</p>
+        </div>
+      </div>
 
-    <div class="middle">
-      <ul>
-        <li data-section="works" class="active big-menu">Works</li>
-        <li data-section="media">Media</li>
-        <li data-section="code">Code</li>
-        <li data-section="contact">Contact</li>
-      </ul>
-    </div>
+      <nav class="menu" aria-label="Main menu">
+        <ul>
+          <li><button data-section="works" class="active">Works</button></li>
+          <li><button data-section="media">Media</button></li>
+          <li><button data-section="code">Code</button></li>
+          <li><button data-section="contact">Contact</button></li>
+        </ul>
+      </nav>
 
-    <!-- Works -->
-    <div class="right content-panel" data-content="works">
-      <div class="box">Project 1</div>
-      <div class="box">Project 2</div>
-      <div class="box">Project 3</div>
-    </div>
+      <footer class="sidebar-foot">
+        <small>© <span id="year"></span> Your Name</small>
+      </footer>
+    </aside>
 
-    <!-- Media -->
-    <div class="right content-panel hidden" data-content="media">
-      <div class="box">Video 1</div>
-      <div class="box">Image 1</div>
-    </div>
+    <section class="content-area" aria-live="polite">
+      <!-- Works -->
+      <div class="content-panel" data-content="works">
+        <div class="grid">
+          <article class="card">Project 1 — Short subtitle</article>
+          <article class="card">Project 2 — Short subtitle</article>
+          <article class="card">Project 3 — Short subtitle</article>
+        </div>
+      </div>
 
-    <!-- Code -->
-    <div class="right content-panel hidden" data-content="code">
-      <div class="box">GitHub Repo 1</div>
-    </div>
+      <!-- Media -->
+      <div class="content-panel hidden" data-content="media">
+        <div class="grid">
+          <div class="card">Video 1</div>
+          <div class="card">Image 1</div>
+        </div>
+      </div>
 
-    <!-- Contact -->
-    <div class="right content-panel hidden" data-content="contact">
-      <div class="box">Email: me@example.com</div>
-    </div>
-  </section>
+      <!-- Code -->
+      <div class="content-panel hidden" data-content="code">
+        <div class="grid">
+          <div class="card">GitHub Repo 1</div>
+          <div class="card">Open Source Project</div>
+        </div>
+      </div>
+
+      <!-- Contact -->
+      <div class="content-panel hidden" data-content="contact">
+        <div class="panel-stack">
+          <p class="lead">Get in touch</p>
+          <div class="card">Email: <a href="mailto:me@example.com">me@example.com</a></div>
+        </div>
+      </div>
+    </section>
+  </main>
 
   <script src="script.js"></script>
 </body>
