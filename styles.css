@@ -1,12 +1,65 @@
-body {
+/* Reset */
+* {
   margin: 0;
-  background: black;
-  color: white;
-  font-family: Arial, sans-serif;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.hidden {
-  display: none;
+body {
+  background: #0e0e0e;
+  color: white;
+  font-family: 'Poppins', sans-serif;
+  overflow-x: hidden;
+}
+
+/* Intro Scene */
+#intro {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+#intro-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.intro-content {
+  position: relative;
+  text-align: center;
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+.intro-name {
+  font-size: 4rem;
+  font-weight: 700;
+}
+
+.intro-sub {
+  font-size: 1.5rem;
+  color: #aaa;
+  margin-top: 0.5rem;
+}
+
+/* Portfolio Layout */
+#portfolio {
+  display: flex;
+  height: 100vh;
+  padding: 2rem;
+}
+
+.left {
+  flex: 1;
+  display: flex;
+  align-items: flex-start;
 }
 
 .big-name {
@@ -14,44 +67,61 @@ body {
   font-weight: bold;
 }
 
-.big-menu {
-  font-size: 1.5rem;
-  font-weight: bold;
+.middle {
+  flex: 1;
+  display: flex;
+  align-items: flex-start;
+}
+
+.middle ul {
+  list-style: none;
 }
 
 .middle li {
   margin: 1rem 0;
   cursor: pointer;
-  transition: all 0.3s ease;
+  font-size: 1.2rem;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.middle li:hover {
+  color: #f39c12;
+  transform: translateX(5px);
 }
 
 .middle li.active {
-  text-decoration: underline;
+  color: #f39c12;
+  font-weight: bold;
 }
 
+/* Right Content Area */
 .right {
-  flex: 2;
-  display: flex;
-  flex-direction: column;
+  flex: 3;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 1rem;
 }
 
 .box {
-  flex: 1;
-  border: 1px solid white;
+  background: #1a1a1a;
+  border-radius: 8px;
   padding: 1rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  text-align: center;
   transition: background 0.3s ease, transform 0.3s ease;
 }
 
 .box:hover {
-  background: rgba(255, 255, 255, 0.1);
-  transform: scale(1.02);
+  background: #f39c12;
+  color: black;
+  transform: scale(1.05);
 }
 
-/* Fade animation classes */
+/* Hidden */
+.hidden {
+  display: none;
+}
+
+/* Fade Animation */
 .fade-out {
   opacity: 0;
   transition: opacity 0.5s ease;
@@ -61,3 +131,14 @@ body {
   opacity: 1;
   transition: opacity 0.5s ease;
 }
+
+/* Responsive */
+@media (max-width: 768px) {
+  #portfolio {
+    flex-direction: column;
+  }
+  .right {
+    grid-template-columns: 1fr;
+  }
+}
+
