@@ -1,86 +1,333 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Evelleity — Portfolio</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Alex Morgan | Portfolio</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Manrope:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Navigation -->
+    <nav>
+      <div class="container nav-container">
+        <a href="#" class="logo" data-page="home">
+          <i class="fas fa-leaf"></i>
+          Alex<span>.</span>
+        </a>
+        <div class="nav-links">
+          <a href="#" class="active" data-page="home">Home</a>
+          <a href="#" data-page="media">Media</a>
+          <a href="#" data-page="code">Code</a>
+          <a href="#" data-page="contact">Contact</a>
+        </div>
+      </div>
+    </nav>
 
-  <!-- Google font -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- Home Page -->
+    <div id="home" class="page active">
+      <div class="container">
+        <div class="home-content">
+          <p class="tagline">Creative Developer & Designer</p>
+          <h1 class="title">Hi, I'm <span>Alex Morgan</span></h1>
+          <p class="description">
+            I create compelling visual stories and elegant digital solutions.
+            With expertise in both media production and software development, I
+            bring ideas to life through a unique combination of technical skill
+            and creative vision.
+          </p>
 
-  <link rel="stylesheet" href="styles.css" />
-</head>
-<body>
-  <!-- Intro Scene -->
-  <section id="intro" aria-hidden="false">
-    <canvas id="intro-bg" aria-hidden="true"></canvas>
-    <div class="intro-content" role="banner">
-      <h1 class="intro-name">Your Name</h1>
-      <p class="intro-sub">Creative Portfolio — Design & Code</p>
+          <div class="btn-group">
+            <a href="#" class="btn" data-page="media">
+              <i class="fas fa-briefcase"></i> View My Work
+            </a>
+            <a href="#" class="btn btn-secondary" data-page="contact">
+              <i class="fas fa-paper-plane"></i> Contact Me
+            </a>
+          </div>
+        </div>
+      </div>
     </div>
-  </section>
 
-  <!-- Main Portfolio -->
-  <main id="portfolio" class="hidden" role="main" aria-hidden="true">
-    <aside class="sidebar" aria-label="Primary">
-      <div class="brand">
-        <span class="brand-mark" aria-hidden="true"></span>
-        <div>
-          <h2 class="big-name">Your Name</h2>
-          <p class="role">Designer · Developer</p>
+    <!-- Media Portfolio Page -->
+    <div id="media" class="page">
+      <div class="container">
+        <div class="section-header">
+          <h2>Media Projects</h2>
+          <p>
+            Visual storytelling through photography, videography, and graphic
+            design
+          </p>
+        </div>
+
+        <div class="portfolio-grid">
+          <div class="portfolio-item">
+            <a
+              href="https://example.com/project1"
+              target="_blank"
+              class="portfolio-img"
+            >
+              <img
+                src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
+                alt="Culinary Journey"
+              />
+            </a>
+            <div class="portfolio-content">
+              <h3>Culinary Journey</h3>
+              <p>
+                Documentary series exploring global food cultures and
+                sustainable farming practices across 12 countries.
+              </p>
+              <span class="portfolio-tag media-tag">Video Production</span>
+            </div>
+          </div>
+
+          <div class="portfolio-item">
+            <a
+              href="https://example.com/project2"
+              target="_blank"
+              class="portfolio-img"
+            >
+              <img
+                src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1174&q=80"
+                alt="Wilderness"
+              />
+            </a>
+            <div class="portfolio-content">
+              <h3>Wilderness</h3>
+              <p>
+                Photography collection from remote natural landscapes capturing
+                the beauty of untouched ecosystems.
+              </p>
+              <span class="portfolio-tag media-tag">Photography</span>
+            </div>
+          </div>
+
+          <div class="portfolio-item">
+            <a
+              href="https://example.com/project3"
+              target="_blank"
+              class="portfolio-img"
+            >
+              <img
+                src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
+                alt="Urban Rhythms"
+              />
+            </a>
+            <div class="portfolio-content">
+              <h3>Urban Rhythms</h3>
+              <p>
+                Time-lapse series capturing city life across different time
+                zones and the interplay of nature in urban environments.
+              </p>
+              <span class="portfolio-tag media-tag">Time-Lapse</span>
+            </div>
+          </div>
         </div>
       </div>
+    </div>
 
-      <nav class="menu" aria-label="Main menu">
-        <ul>
-          <li><button data-section="media">Media</button></li>
-          <li><button data-section="code">Code</button></li>
-          <li><button data-section="contact">Contact</button></li>
-        </ul>
-      </nav>
+    <!-- Code Portfolio Page -->
+    <div id="code" class="page">
+      <div class="container">
+        <div class="section-header">
+          <h2>Code Projects</h2>
+          <p>
+            Technical solutions and innovative applications built with modern
+            technologies
+          </p>
+        </div>
 
-      <footer class="sidebar-foot">
-        <small>© <span id="year"></span> Your Name</small>
-      </footer>
-    </aside>
+        <div class="portfolio-grid">
+          <div class="portfolio-item">
+            <a
+              href="https://example.com/project4"
+              target="_blank"
+              class="portfolio-img"
+            >
+              <img
+                src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
+                alt="Finance Dashboard"
+              />
+            </a>
+            <div class="portfolio-content">
+              <h3>EcoTrack</h3>
+              <p>
+                Sustainability dashboard for businesses to monitor and reduce
+                their environmental impact through data visualization.
+              </p>
+              <span class="portfolio-tag">Web Application</span>
+            </div>
+          </div>
 
-    <section class="content-area" aria-live="polite">
-      <!-- Works -->
-      <div class="content-panel" data-content="works">
-        <h1 class="section-title">Works</h1>
-        <div class="grid">
-          <article class="card">Project 1 — Short subtitle</article>
-          <article class="card">Project 2 — Short subtitle</article>
-          <article class="card">Project 3 — Short subtitle</article>
+          <div class="portfolio-item">
+            <a
+              href="https://example.com/project5"
+              target="_blank"
+              class="portfolio-img"
+            >
+              <img
+                src="https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80"
+                alt="Health Tracker"
+              />
+            </a>
+            <div class="portfolio-content">
+              <h3>ForestGuard</h3>
+              <p>
+                Mobile application for conservationists to track wildlife and
+                report environmental changes using geolocation.
+              </p>
+              <span class="portfolio-tag">Mobile App</span>
+            </div>
+          </div>
+
+          <div class="portfolio-item">
+            <a
+              href="https://example.com/project6"
+              target="_blank"
+              class="portfolio-img"
+            >
+              <img
+                src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
+                alt="AI Assistant"
+              />
+            </a>
+            <div class="portfolio-content">
+              <h3>GreenAI</h3>
+              <p>
+                Natural language processing tool that helps organizations
+                optimize their resource consumption and sustainability efforts.
+              </p>
+              <span class="portfolio-tag">Machine Learning</span>
+            </div>
+          </div>
         </div>
       </div>
+    </div>
 
-      <!-- Media -->
-      <div class="content-panel hidden" data-content="media">
-        <div class="grid">
-          <div class="card">Video 1</div>
-          <div class="card">Image 1</div>
+    <!-- Contact Page -->
+    <div id="contact" class="page">
+      <div class="container">
+        <div class="section-header">
+          <h2>Get In Touch</h2>
+          <p>Have a project in mind or want to collaborate? Reach out to me!</p>
+        </div>
+
+        <div class="contact-container">
+          <div class="contact-info">
+            <div class="contact-item">
+              <div class="contact-icon">
+                <i class="fas fa-envelope"></i>
+              </div>
+              <div class="contact-text">
+                <h3>Email</h3>
+                <a href="mailto:alex@example.com">alex@example.com</a>
+              </div>
+            </div>
+
+            <div class="contact-item">
+              <div class="contact-icon">
+                <i class="fas fa-phone"></i>
+              </div>
+              <div class="contact-text">
+                <h3>Phone</h3>
+                <a href="tel:+1234567890">+1 (234) 567-890</a>
+              </div>
+            </div>
+
+            <div class="contact-item">
+              <div class="contact-icon">
+                <i class="fas fa-map-marker-alt"></i>
+              </div>
+              <div class="contact-text">
+                <h3>Location</h3>
+                <p>Portland, Oregon</p>
+              </div>
+            </div>
+
+            <div class="social-links">
+              <a href="#" class="social-icon">
+                <i class="fab fa-github"></i>
+              </a>
+              <a href="#" class="social-icon">
+                <i class="fab fa-linkedin-in"></i>
+              </a>
+              <a href="#" class="social-icon">
+                <i class="fab fa-instagram"></i>
+              </a>
+              <a href="#" class="social-icon">
+                <i class="fab fa-behance"></i>
+              </a>
+            </div>
+          </div>
+
+          <div class="contact-form">
+            <form>
+              <div class="form-group">
+                <label for="name">Full Name</label>
+                <input
+                  type="text"
+                  id="name"
+                  class="form-control"
+                  placeholder="Enter your name"
+                />
+              </div>
+
+              <div class="form-group">
+                <label for="email">Email Address</label>
+                <input
+                  type="email"
+                  id="email"
+                  class="form-control"
+                  placeholder="Enter your email"
+                />
+              </div>
+
+              <div class="form-group">
+                <label for="subject">Subject</label>
+                <input
+                  type="text"
+                  id="subject"
+                  class="form-control"
+                  placeholder="What is this regarding?"
+                />
+              </div>
+
+              <div class="form-group">
+                <label for="message">Message</label>
+                <textarea
+                  id="message"
+                  class="form-control"
+                  placeholder="Tell me about your project"
+                ></textarea>
+              </div>
+
+              <button type="submit" class="btn">
+                <i class="fas fa-paper-plane"></i> Send Message
+              </button>
+            </form>
+          </div>
         </div>
       </div>
+    </div>
 
-      <!-- Code -->
-      <div class="content-panel hidden" data-content="code">
-        <div class="grid">
-          <div class="card">GitHub Repo 1</div>
-          <div class="card">Open Source Project</div>
-        </div>
+    <!-- Footer -->
+    <footer>
+      <div class="container">
+        <div class="footer-logo">Alex<span>.</span></div>
+        <p class="copyright">
+          © 2023 Alex Morgan. All rights reserved. Crafted with nature-inspired
+          design.
+        </p>
       </div>
-
-      <!-- Contact -->
-      <div class="content-panel hidden" data-content="contact">
-        <div class="panel-stack">
-          <p class="lead">Get in touch</p>
-          <p>Email: <a href="mailto:me@example.com">me@example.com</a></p>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <script src="script.js"></script>
-</body>
+    </footer>
+    <script src="script.js"></script>
+  </body>
 </html>
