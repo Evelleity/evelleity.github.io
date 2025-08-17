@@ -1,51 +1,57 @@
-// Page navigation functionality
-document.addEventListener("DOMContentLoaded", function () {
-  const navLinks = document.querySelectorAll(".nav-links a, .btn[data-page]");
-  const pages = document.querySelectorAll(".page");
+// Feather Icons
+        feather.replace();
 
-  // Set active page
-  function setActivePage(pageId) {
-    // Update navigation links
-    navLinks.forEach((link) => {
-      if (link.getAttribute("data-page") === pageId) {
-        link.classList.add("active");
-      } else {
-        link.classList.remove("active");
-      }
-    });
+        // --- Custom Cursor Logic ---
+        const cursor = document.querySelector('.cursor');
+        document.addEventListener('mousemove', e => {
+            cursor.style.left = e.clientX + 'px';
+            cursor.style.top = e.clientY + 'px';
+        });
 
-    // Show active page
-    pages.forEach((page) => {
-      if (page.id === pageId) {
-        page.classList.add("active");
-        page.style.animation = "fadeIn 0.6s forwards";
-      } else {
-        page.classList.remove("active");
-      }
-    });
+        function addCursorListeners() {
+            document.querySelectorAll('a, button, input').forEach(el => {
+                el.addEventListener('mouseenter', () => cursor.classList.add('cursor-grow'));
+                el.addEventListener('mouseleave', () => cursor.classList.remove('cursor-grow'));
+            });
+        }
+        addCursorListeners();
 
-    // Scroll to top
-    window.scrollTo(0, 0);
-  }
 
-  // Add click event listeners
-  navLinks.forEach((link) => {
-    link.addEventListener("click", function (e) {
-      e.preventDefault();
-      const pageId = this.getAttribute("data-page");
-      setActivePage(pageId);
-    });
-  });
+        // --- Theme Toggler ---
+        const themeToggle = document.getElementById('theme-toggle');
+        const htmlEl = document.documentElement;
 
-  // Sticky navigation background
-  window.addEventListener("scroll", function () {
-    const nav = document.querySelector("nav");
-    if (window.scrollY > 100) {
-      nav.style.padding = "1rem 0";
-      nav.style.background = "rgba(10, 10, 10, 0.98)";
-    } else {
-      nav.style.padding = "1.5rem 0";
-      nav.style.background = "rgba(10, 10, 10, 0.95)";
-    }
-  });
-});
+        // Set initial theme based on localStorage or default
+        if (localStorage.getItem('theme') === 'light') {
+            htmlEl.classList.remove('dark');
+        } else {
+            htmlEl.classList.add('dark');
+        }
+
+        themeToggle.addEventListener('click', () => {
+            htmlEl.classList.toggle('dark');
+            if (htmlEl.classList.contains('dark')) {
+                localStorage.setItem('theme', 'dark');
+            } else {
+                localStorage.setItem('theme', 'light');
+            }
+            // Re-render icons after theme change
+            feather.replace();
+        });
+
+        // --- Intersection Observer for fade-in animations ---
+        const sections = document.querySelectorAll('.fade-in-section');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, {
+            threshold: 0.1
+        });
+
+        sections.forEach(section => {
+            observer.observe(section);
+        });

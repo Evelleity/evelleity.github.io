@@ -1,333 +1,116 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Alex Morgan | Portfolio</title>
-    <link rel="stylesheet" href="styles.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Manrope:wght@400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
-  </head>
-  <body>
-    <!-- Navigation -->
-    <nav>
-      <div class="container nav-container">
-        <a href="#" class="logo" data-page="home">
-          <i class="fas fa-leaf"></i>
-          Alex<span>.</span>
-        </a>
-        <div class="nav-links">
-          <a href="#" class="active" data-page="home">Home</a>
-          <a href="#" data-page="media">Media</a>
-          <a href="#" data-page="code">Code</a>
-          <a href="#" data-page="contact">Contact</a>
-        </div>
-      </div>
-    </nav>
+<html lang="en" class="scroll-smooth dark"> <!-- Default to dark mode -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Evei</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="styles.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/feather-icons"></script>
+</head>
+<body class="antialiased">
+    
+    <!-- Custom Cursor -->
+    <div class="cursor"></div>
 
-    <!-- Home Page -->
-    <div id="home" class="page active">
-      <div class="container">
-        <div class="home-content">
-          <p class="tagline">Creative Developer & Designer</p>
-          <h1 class="title">Hi, I'm <span>Alex Morgan</span></h1>
-          <p class="description">
-            I create compelling visual stories and elegant digital solutions.
-            With expertise in both media production and software development, I
-            bring ideas to life through a unique combination of technical skill
-            and creative vision.
-          </p>
-
-          <div class="btn-group">
-            <a href="#" class="btn" data-page="media">
-              <i class="fas fa-briefcase"></i> View My Work
-            </a>
-            <a href="#" class="btn btn-secondary" data-page="contact">
-              <i class="fas fa-paper-plane"></i> Contact Me
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Media Portfolio Page -->
-    <div id="media" class="page">
-      <div class="container">
-        <div class="section-header">
-          <h2>Media Projects</h2>
-          <p>
-            Visual storytelling through photography, videography, and graphic
-            design
-          </p>
-        </div>
-
-        <div class="portfolio-grid">
-          <div class="portfolio-item">
-            <a
-              href="https://example.com/project1"
-              target="_blank"
-              class="portfolio-img"
-            >
-              <img
-                src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
-                alt="Culinary Journey"
-              />
-            </a>
-            <div class="portfolio-content">
-              <h3>Culinary Journey</h3>
-              <p>
-                Documentary series exploring global food cultures and
-                sustainable farming practices across 12 countries.
-              </p>
-              <span class="portfolio-tag media-tag">Video Production</span>
+    <!-- Header and Navigation -->
+    <header class="header-bg sticky top-0 z-50 w-full border-b" style="border-color: var(--border-color);">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-xl font-bold tracking-wider">ET</a>
+            <div class="flex items-center space-x-6">
+                <ul class="hidden md:flex items-center space-x-6 text-sm">
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                <button id="theme-toggle" class="p-2 rounded-full focus:outline-none">
+                    <i data-feather="moon" class="block dark:hidden w-5 h-5"></i>
+                    <i data-feather="sun" class="hidden dark:block w-5 h-5"></i>
+                </button>
             </div>
-          </div>
+        </nav>
+    </header>
 
-          <div class="portfolio-item">
-            <a
-              href="https://example.com/project2"
-              target="_blank"
-              class="portfolio-img"
-            >
-              <img
-                src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1174&q=80"
-                alt="Wilderness"
-              />
-            </a>
-            <div class="portfolio-content">
-              <h3>Wilderness</h3>
-              <p>
-                Photography collection from remote natural landscapes capturing
-                the beauty of untouched ecosystems.
-              </p>
-              <span class="portfolio-tag media-tag">Photography</span>
+    <main class="container mx-auto px-6 py-12 md:py-24">
+
+        <!-- Hero Section -->
+        <section id="home" class="min-h-[70vh] flex flex-col justify-center fade-in-section">
+            <h1 class="text-4xl md:text-6xl font-bold leading-tight mb-4">
+                Ethan Toh
+            </h1>
+            <p class="text-lg md:text-xl max-w-2xl" style="color: var(--text-color-secondary);">
+                Designer / Editor turned Developer; seeking inspiration in my work everywhere I go
+            </p>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="py-20 md:py-32 fade-in-section">
+            <div class="max-w-4xl mx-auto">
+                <h2 class="text-2xl font-bold mb-6">// About Me</h2>
+                <div class="space-y-4 text-base md:text-lg">
+                    <p>
+                        Hello I'm Ethan. I started with design and editing, and I'm moving on to the cloud.  
+                    </p>
+                    <!--
+                    <p>
+                        filler Text
+                    </p>
+                    -->
+                </div>
             </div>
-          </div>
+        </section>
 
-          <div class="portfolio-item">
-            <a
-              href="https://example.com/project3"
-              target="_blank"
-              class="portfolio-img"
-            >
-              <img
-                src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
-                alt="Urban Rhythms"
-              />
-            </a>
-            <div class="portfolio-content">
-              <h3>Urban Rhythms</h3>
-              <p>
-                Time-lapse series capturing city life across different time
-                zones and the interplay of nature in urban environments.
-              </p>
-              <span class="portfolio-tag media-tag">Time-Lapse</span>
+        <!-- Projects Section -->
+        <section id="projects" class="py-20 md:py-32 fade-in-section">
+            <div class="max-w-4xl mx-auto">
+                <h2 class="text-2xl font-bold mb-8">// Selected Projects</h2>
+                <div id="project-list" class="border-t" style="border-color: var(--border-color);">
+                    <!-- Project Item 1 -->
+                    <div class="project-item border-b" style="border-color: var(--border-color);">
+                        <a href="#" class="flex justify-between items-center py-8 px-2 md:px-4">
+                            <div>
+                                <h3 class="text-xl md:text-2xl font-bold">To be added</h3>
+                                <p class="text-sm mt-1 text-gray-400">nil</p>
+                            </div>
+                            <div class="flex items-center space-x-4">
+                                <span class="hidden md:block text-sm text-gray-400">2024</span>
+                                <i data-feather="arrow-right" class="arrow"></i>
+                            </div>
+                        </a>
+                    </div>
+                
+                </div>
             </div>
-          </div>
-        </div>
-      </div>
-    </div>
+        </section>
 
-    <!-- Code Portfolio Page -->
-    <div id="code" class="page">
-      <div class="container">
-        <div class="section-header">
-          <h2>Code Projects</h2>
-          <p>
-            Technical solutions and innovative applications built with modern
-            technologies
-          </p>
-        </div>
-
-        <div class="portfolio-grid">
-          <div class="portfolio-item">
-            <a
-              href="https://example.com/project4"
-              target="_blank"
-              class="portfolio-img"
-            >
-              <img
-                src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
-                alt="Finance Dashboard"
-              />
-            </a>
-            <div class="portfolio-content">
-              <h3>EcoTrack</h3>
-              <p>
-                Sustainability dashboard for businesses to monitor and reduce
-                their environmental impact through data visualization.
-              </p>
-              <span class="portfolio-tag">Web Application</span>
+        <!-- Contact Section -->
+        <section id="contact" class="py-20 md:py-32 text-left fade-in-section">
+            <div class="max-w-4xl mx-auto">
+                <h2 class="text-2xl font-bold mb-4">// Get In Touch</h2>
+                <p class="max-w-xl mb-8">
+                    If something interesting is happening I'd love to be involved!
+                </p>
+                <a href="mailto:evitern@outlook.com" class="inline-block text-lg font-bold underline hover:no-underline">
+                    evitern@outlook.com
+                </a>
             </div>
-          </div>
+        </section>
 
-          <div class="portfolio-item">
-            <a
-              href="https://example.com/project5"
-              target="_blank"
-              class="portfolio-img"
-            >
-              <img
-                src="https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80"
-                alt="Health Tracker"
-              />
-            </a>
-            <div class="portfolio-content">
-              <h3>ForestGuard</h3>
-              <p>
-                Mobile application for conservationists to track wildlife and
-                report environmental changes using geolocation.
-              </p>
-              <span class="portfolio-tag">Mobile App</span>
-            </div>
-          </div>
-
-          <div class="portfolio-item">
-            <a
-              href="https://example.com/project6"
-              target="_blank"
-              class="portfolio-img"
-            >
-              <img
-                src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
-                alt="AI Assistant"
-              />
-            </a>
-            <div class="portfolio-content">
-              <h3>GreenAI</h3>
-              <p>
-                Natural language processing tool that helps organizations
-                optimize their resource consumption and sustainability efforts.
-              </p>
-              <span class="portfolio-tag">Machine Learning</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Contact Page -->
-    <div id="contact" class="page">
-      <div class="container">
-        <div class="section-header">
-          <h2>Get In Touch</h2>
-          <p>Have a project in mind or want to collaborate? Reach out to me!</p>
-        </div>
-
-        <div class="contact-container">
-          <div class="contact-info">
-            <div class="contact-item">
-              <div class="contact-icon">
-                <i class="fas fa-envelope"></i>
-              </div>
-              <div class="contact-text">
-                <h3>Email</h3>
-                <a href="mailto:alex@example.com">alex@example.com</a>
-              </div>
-            </div>
-
-            <div class="contact-item">
-              <div class="contact-icon">
-                <i class="fas fa-phone"></i>
-              </div>
-              <div class="contact-text">
-                <h3>Phone</h3>
-                <a href="tel:+1234567890">+1 (234) 567-890</a>
-              </div>
-            </div>
-
-            <div class="contact-item">
-              <div class="contact-icon">
-                <i class="fas fa-map-marker-alt"></i>
-              </div>
-              <div class="contact-text">
-                <h3>Location</h3>
-                <p>Portland, Oregon</p>
-              </div>
-            </div>
-
-            <div class="social-links">
-              <a href="#" class="social-icon">
-                <i class="fab fa-github"></i>
-              </a>
-              <a href="#" class="social-icon">
-                <i class="fab fa-linkedin-in"></i>
-              </a>
-              <a href="#" class="social-icon">
-                <i class="fab fa-instagram"></i>
-              </a>
-              <a href="#" class="social-icon">
-                <i class="fab fa-behance"></i>
-              </a>
-            </div>
-          </div>
-
-          <div class="contact-form">
-            <form>
-              <div class="form-group">
-                <label for="name">Full Name</label>
-                <input
-                  type="text"
-                  id="name"
-                  class="form-control"
-                  placeholder="Enter your name"
-                />
-              </div>
-
-              <div class="form-group">
-                <label for="email">Email Address</label>
-                <input
-                  type="email"
-                  id="email"
-                  class="form-control"
-                  placeholder="Enter your email"
-                />
-              </div>
-
-              <div class="form-group">
-                <label for="subject">Subject</label>
-                <input
-                  type="text"
-                  id="subject"
-                  class="form-control"
-                  placeholder="What is this regarding?"
-                />
-              </div>
-
-              <div class="form-group">
-                <label for="message">Message</label>
-                <textarea
-                  id="message"
-                  class="form-control"
-                  placeholder="Tell me about your project"
-                ></textarea>
-              </div>
-
-              <button type="submit" class="btn">
-                <i class="fas fa-paper-plane"></i> Send Message
-              </button>
-            </form>
-          </div>
-        </div>
-      </div>
-    </div>
+    </main>
 
     <!-- Footer -->
-    <footer>
-      <div class="container">
-        <div class="footer-logo">Alex<span>.</span></div>
-        <p class="copyright">
-          © 2023 Alex Morgan. All rights reserved. Crafted with nature-inspired
-          design.
-        </p>
-      </div>
+    <footer class="border-t" style="border-color: var(--border-color);">
+        <div class="container mx-auto px-6 py-6 flex flex-col md:flex-row justify-between items-center text-xs">
+            <p>&copy; 2025 Evelleity</p>
+            <div class="flex space-x-4 mt-4 md:mt-0">
+                <a href="#"><i data-feather="github" class="w-4 h-4"></i></a>
+                <a href="#"><i data-feather="linkedin" class="w-4 h-4"></i></a>
+                <a href="#"><i data-feather="twitter" class="w-4 h-4"></i></a>
+            </div>
+        </div>
     </footer>
-    <script src="script.js"></script>
-  </body>
+</body>
+<script src="script.js" defer></script>
+
 </html>
