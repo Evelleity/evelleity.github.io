@@ -1,157 +1,17 @@
-<!DOCTYPE html>
-<html lang="en" class="scroll-smooth dark"> <!-- Default to dark mode -->
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Evei</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="styles.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
-    <script src="https://unpkg.com/feather-icons"></script>
-</head>
-<body class="antialiased">
-    
-    <!-- Custom Cursor -->
-    <div class="cursor"></div>
-
-    <!-- Header and Navigation -->
-    <header class="header-bg sticky top-0 z-50 w-full border-b" style="border-color: var(--border-color);">
-        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="#" class="text-xl font-bold tracking-wider">ET</a>
-            <div class="flex items-center space-x-6">
-                <ul class="hidden md:flex items-center space-x-6 text-sm">
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#projects">Projects</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-                <button id="theme-toggle" class="p-2 rounded-full focus:outline-none">
-                    <i data-feather="moon" class="block dark:hidden w-5 h-5"></i>
-                    <i data-feather="sun" class="hidden dark:block w-5 h-5"></i>
-                </button>
-            </div>
-        </nav>
-    </header>
-
-    <main class="container mx-auto px-6 py-12 md:py-24">
-
-        <!-- Hero Section -->
-        <section id="home" class="min-h-[70vh] flex flex-col justify-center fade-in-section">
-            <h1 class="text-4xl md:text-6xl font-bold leading-tight mb-4">
-                Ethan Toh
-            </h1>
-            <p class="text-lg md:text-xl max-w-2xl" style="color: var(--text-color-secondary);">
-                Designer / Editor turned Developer; seeking inspiration in my work everywhere I go
-            </p>
-        </section>
-
-        <!-- About Section -->
-        <section id="about" class="py-20 md:py-32 fade-in-section">
-            <div class="max-w-4xl mx-auto">
-                <h2 class="text-2xl font-bold mb-6">// About Me</h2>
-                <div class="space-y-4 text-base md:text-lg">
-                    <p>
-                        Hello I'm Ethan. I started with design and editing, and I'm moving on to the cloud.  
-                    </p>
-                    <!--
-                    <p>
-                        filler Text
-                    </p>
-                    -->
-                </div>
-            </div>
-        </section>
-
-        <!-- Projects Section -->
-        <section id="projects" class="py-20 md:py-32 fade-in-section">
-            <div class="max-w-4xl mx-auto">
-                <h2 class="text-2xl font-bold mb-8">// Projects </h2>
-                <div id="project-list" class="border-t" style="border-color: var(--border-color);">
-                    <!-- Project Item 1 -->
-                    <div class="project-item border-b" style="border-color: var(--border-color);">
-                        <a href="https://xd.adobe.com/view/3b7c64f1-03b7-4882-93c2-cbf2c7b1f813-6e2f/screen/7d823ef3-33db-4577-ab42-5a411341134e?fullscreen&hints=off" class="flex justify-between items-center py-8 px-2 md:px-4">
-                            <div>
-                                <h3 class="text-xl md:text-2xl font-bold">NP App Prototype</h3>
-                                <p class="text-sm mt-1 text-gray-400">A prototype created using Adobe XD while I was doing my diploma</p>
-                            </div>
-                            <div class="flex items-center space-x-4">
-                                <span class="hidden md:block text-sm text-gray-400">2020</span>
-                                <i data-feather="arrow-right" class="arrow"></i>
-                            </div>
-                        </a>
-                    </div>
-                   
-                    <!-- Project Item 2 -->
-                    <div class="project-item border-b" style="border-color: var(--border-color);">
-                        <a href="https://s10197938.wixsite.com/newsfea-fa3" class="flex justify-between items-center py-8 px-2 md:px-4">
-                            <div>
-                                <h3 class="text-xl md:text-2xl font-bold">News Agency - T.Lot</h3>
-                                <p class="text-sm mt-1 text-gray-400">A news agency webpage during my diploma days</p>
-                            </div>
-                            <div class="flex items-center space-x-4">
-                                <span class="hidden md:block text-sm text-gray-400">2020</span>
-                                <i data-feather="arrow-right" class="arrow"></i>
-                            </div>
-                        </a>
-                    </div>
-
-                    <!-- Project Item 3 -->
-                    <div class="project-item border-b" style="border-color: var(--border-color);">
-                        <a href="https://www.youtube.com/watch?v=BaFtWL-9QqU" class="flex justify-between items-center py-8 px-2 md:px-4">
-                            <div>
-                                <h3 class="text-xl md:text-2xl font-bold">Video Production</h3>
-                                <p class="text-sm mt-1 text-gray-400">Planning, Shooting, Editing, worked in a team to produce this</p>
-                            </div>
-                            <div class="flex items-center space-x-4">
-                                <span class="hidden md:block text-sm text-gray-400">2021</span>
-                                <i data-feather="arrow-right" class="arrow"></i>
-                            </div>
-                        </a>
-                    </div>
-                    <!-- Project Item 4 -->
-                    <div class="project-item border-b" style="border-color: var(--border-color);">
-                        <a href="https://www.suss.edu.sg/news-events/happenings/webinars-on-campus-events/detail/2025/09/08/default-calendar/re-define-success-conference" class="flex justify-between items-center py-8 px-2 md:px-4">
-                            <div>
-                                <h3 class="text-xl md:text-2xl font-bold">Website Creation</h3>
-                                <p class="text-sm mt-1 text-gray-400">I manage and upkeep various pages on the webpage despite the many restrictions given.</p>
-                            </div>
-                            <div class="flex items-center space-x-4">
-                                <span class="hidden md:block text-sm text-gray-400">2025</span>
-                                <i data-feather="arrow-right" class="arrow"></i>
-                            </div>
-                        </a>
-                    </div>
-
-                <!-- end of div of projects section -->
-                </div>
-            </div>
-        </section>
-
-        <!-- Contact Section -->
-        <section id="contact" class="py-20 md:py-32 text-left fade-in-section">
-            <div class="max-w-4xl mx-auto">
-                <h2 class="text-2xl font-bold mb-4">// Get In Touch</h2>
-                <p class="max-w-xl mb-8">
-                    If something interesting is happening I'd love to be involved!
-                </p>
-                <a href="mailto:evitern@outlook.com" class="inline-block text-lg font-bold underline hover:no-underline">
-                    evitern@outlook.com
-                </a>
-            </div>
-        </section>
-
-    </main>
-
-    <!-- Footer -->
-    <footer class="border-t" style="border-color: var(--border-color);">
-        <div class="container mx-auto px-6 py-6 flex flex-col md:flex-row justify-between items-center text-xs">
-            <p>&copy; 2025 Evelleity</p>
-            <div class="flex space-x-4 mt-4 md:mt-0">
-                <a href="https://github.com/Evelleity"><i data-feather="github" class="w-4 h-4"></i></a>
-                <a href="https://www.linkedin.com/in/ethan-toh-513836184/"><i data-feather="linkedin" class="w-4 h-4"></i></a>
-            </div>
-        </div>
-    </footer>
-</body>
-<script src="script.js" defer></script>
-
+<!doctype html>
+<html lang="en" class="h-full">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ethan Toh • Portfolio</title>
+    <!-- Fonts: Condensed Sans + Serif Accent -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Narrow:wght@400;500;600;700&family=IBM+Plex+Serif:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  </head>
+  <body class="h-full bg-black text-white">
+    <div id="root" class="h-full"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
 </html>
