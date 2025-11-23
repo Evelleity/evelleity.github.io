@@ -1,6 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { ExternalLink, X, ChevronRight, ChevronLeft, Layers, Play } from 'lucide-react';
-import App from './App.jsx'; // keep old for reference if needed
 
 // Colors retained from original for continuity
 const COLORS = {
