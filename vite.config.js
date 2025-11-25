@@ -1,9 +1,13 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 
-// https://vitejs.dev/config/
+// GitHub Pages user site: base remains '/'.
+// Output to 'docs' so Pages can serve main branch /docs without a build action.
 export default defineConfig({
   plugins: [react()],
-  // For a user/organization root Pages site (<username>.github.io), base should be '/'
   base: '/',
+  build: {
+    outDir: 'docs',
+    emptyOutDir: true,
+  },
 })
